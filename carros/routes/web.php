@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\controllerVeiculos;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +16,8 @@ Route::group(['middleware' => 'auth'],  function (){
     })->name('dashboard');
 
 
-   Route::get('/veiculos', function(){
-     return view('veiculos');
-   })->name('veiculos');
-
-
+   Route::get('/index-veiculo', [controllerVeiculos::class, 'index']) ->name('veiculos.index');
+   Route::get('/create-veiculo', [controllerVeiculos::class, 'create']  )->name('veiculos.create');
 
 
 } );
