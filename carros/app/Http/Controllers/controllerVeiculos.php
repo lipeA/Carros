@@ -22,7 +22,7 @@ class controllerVeiculos extends Controller
 
         $veiculoCad = modelVeiculos::created($request->all());
 
-        return redirect('veiculos.show')->with('sucesso', 'veiculo cadastrado com sucesso.!');
+        return redirect()->route('veiculos.show')->with('sucesso', 'veiculo cadastrado com sucesso.!');
     }
 
 

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('telefone');
             $table->string('cnh');
+            $table->string('sexo');
+            $table->date('data_nascimento');
             $table->timestamps();
         });
     }
