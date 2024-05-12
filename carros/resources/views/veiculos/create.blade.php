@@ -26,21 +26,21 @@
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-base font-semibold leading-7 text-gray-900">Preencha as informações sobre o
                            dono veiculo</h2>
-                        
+
                         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                             <div class="sm:col-span-3">
                                 <label for="modelo" class="block text-sm font-medium leading-6 text-gray-900">Informe o modelo do carro</label>
                                 <div class="mt-2">
-                                    <input type="text" name="modelo" id="first-name" onkeyup="this.value = this.value.toUpperCase()"
+                                    <input type="text" name="modelo" id="modelo" maxlength="15" onkeyup="this.value = this.value.toUpperCase()"
                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
 
                             <div class="sm:col-span-3">
-                                <label for="modelo"
+                                <label for="marca"
                                     class="block text-sm font-medium leading-6 text-gray-900">Selecione a marca do carro </label>
                                 <div class="mt-2">
-                                    <select id="country" name="marca" autocomplete="country-name"
+                                    <select id="marca" name="marca"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                                         <option value="Aston Martin">Aston Martin</option>
                                         <option value="Audi">Audi</option>
@@ -88,24 +88,46 @@
                                 </div>
                             </div>
                             <div class="sm:col-span-3">
-                                <label for="Cor"
-                                    class="block text-sm font-medium leading-6 text-gray-900">Cor</label>
+                                <label for="cor"
+                                    class="block text-sm font-medium leading-6 text-gray-900">Selecione a cor do carro </label>
                                 <div class="mt-2">
-                                    <input type="text" name="Cor" id="Cor"
-                                        autocomplete="Cor" onkeyup="this.value = this.value.toUpperCase()"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    <select id="cor" name="cor"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        <option value="Branco">Branco</option>
+                                        <option value="Prata">Prata</option>
+                                        <option value="Cinza">Cinza</option>
+                                        <option value="Preto">Preto</option>
+                                        <option value="Azul">Azul</option>
+                                        <option value="Vermelho">Vermelho</option>
+                                        <option value="Marrom">Marrom</option>
+                                        <option value="Verde">Verde</option>
+                                        <option value="Amarelo">Amarelo</option>
+                                        <option value="Laranja">Laranja</option>
+
+
+                                    </select>
                                 </div>
                             </div>
+
+
+
 
                             <div class="sm:col-span-3">
-                                <label for="frabricacao" class="block text-sm font-medium leading-6 text-gray-900">Ano de fabricação</label>
+                                <label for="placa" class="block text-sm font-medium leading-6 text-gray-900">placa</label>
                                 <div class="mt-2">
-                                    <input id="frabricacao" name="frabricacao" type="text" 
+                                    <input id="placa" name="placa" type="text" maxlength="10"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            <div class="sm:col-span-3">
+                                <label for="ano" class="block text-sm font-medium leading-6 text-gray-900">Ano de fabricação</label>
+                                <div class="mt-2">
+                                    <input id="ano" name="ano" type="text" maxlength="4"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
                             </div>
 
-                            <div class="col-span-full">
+                            {{-- <div class="col-span-full">
                                 <label for="Proprietario"
                                     class="block text-sm font-medium leading-6 text-gray-900">Proprietario</label>
                                 <div class="mt-2">
@@ -113,9 +135,9 @@
                                         autocomplete="Proprietario"
                                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                 </div>
-                            </div>
+                            </div> --}}
 
-                            
+
 
                         </div>
                     </div>

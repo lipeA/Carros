@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\modelVeiculos;
+use LDAP\Result;
 
 class controllerVeiculos extends Controller
 {
 
     public function index()
     {
-        $veiculos = modelVeiculos::all();
+        $veiculos = modelVeiculos::orderBy('created_at', 'desc')->get();
 
         return view('veiculos.index', ['veiculos' => $veiculos]);
     }
@@ -20,9 +21,19 @@ class controllerVeiculos extends Controller
     public function store(Request $request)
     {
 
-        $veiculoCad = modelVeiculos::created($request->all());
+           $modelveiculos = new modelVeiculos;
 
-        return redirect()->route('veiculos.show')->with('sucesso', 'veiculo cadastrado com sucesso.!');
+            $modelveiculos->veiculo = $request->modelo;
+            $modelveiculos->placa = $request->placa;
+            $modelveiculos->cor = $request->cor;
+            $modelveiculos->ano = $request->ano;
+
+
+            $modelveiculos->save();
+
+
+        return redirect()->route('veiculos.index');
+
     }
 
 
@@ -40,4 +51,13 @@ class controllerVeiculos extends Controller
 
         return view('veiculos.show');
     }
+
+
+
+
+
+
+
+
+
 }
