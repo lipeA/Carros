@@ -18,6 +18,17 @@ class controllerVeiculos extends Controller
     }
 
 
+    public function show($id)
+    {
+       $carro = modelVeiculos::find($id);
+
+       
+
+        return view('veiculos.show', ['carro' =>$carro]);
+    }
+
+
+
     public function store(Request $request)
     {
 
@@ -45,12 +56,6 @@ class controllerVeiculos extends Controller
 
 
 
-
-    public function show()
-    {
-
-        return view('veiculos.show');
-    }
 
 
 

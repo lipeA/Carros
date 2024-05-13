@@ -19,8 +19,8 @@ Route::group(['middleware' => 'auth'],  function (){
    Route::get('/index-veiculo', [controllerVeiculos::class, 'index']) ->name('veiculos.index');
    Route::get('/create-veiculo', [controllerVeiculos::class, 'create'])->name('veiculos.create');
    Route::post('/store-veiculo', [controllerVeiculos::class, 'store'])->name('veiculos.store');
-   Route::get('/show-veiculo', [controllerVeiculos::class, 'store'])->name('veiculos.show');
-  
+   Route::get('/show-veiculo/{id}', [controllerVeiculos::class, 'show'])->name('veiculos.show');
+
 
 
 } );

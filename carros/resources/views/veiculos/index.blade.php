@@ -31,7 +31,7 @@
                             <td> {{ $veiculo->placa }} </td>
                             <td>1961</td>
                             <td>
-                                <button class="bg-green-700 text-white p-2 rounded-md"> Visualizar </button>
+                              <a href=" {{route('veiculos.show', ['id' => $veiculo->id ])}} "> <button class="bg-green-700 text-white p-2 rounded-md"> Visualizar </button> </a>
                                 <button class="bg-yellow-700 text-white p-2 rounded-md"> Editar </button>
                                 <button class="bg-red-700 text-white p-2 rounded-md "> Excluir </button>
 
