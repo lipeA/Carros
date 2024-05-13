@@ -22,18 +22,22 @@ class controllerVeiculos extends Controller
     {
        $carro = modelVeiculos::find($id);
 
-       
+
 
         return view('veiculos.show', ['carro' =>$carro]);
     }
 
+
+    public function create()
+    {
+        return view('veiculos.create');
+    }
 
 
     public function store(Request $request)
     {
 
            $modelveiculos = new modelVeiculos;
-
             $modelveiculos->veiculo = $request->modelo;
             $modelveiculos->placa = $request->placa;
             $modelveiculos->cor = $request->cor;
@@ -43,16 +47,23 @@ class controllerVeiculos extends Controller
             $modelveiculos->save();
 
 
-        return redirect()->route('veiculos.index');
+        return redirect()->route('veiculos.index')->with('sucess', 'veiculo criado com sucesso!');
+
 
     }
 
 
+    public function destroy($id){
 
-    public function create()
-    {
-        return view('veiculos.create');
+        $carrodel = modelVeiculos::find($id);
+
+        $carrodel->delete();
+
+        return redirect()->route('veiculos.index')->with('sucess', 'veiculo apagado com sucesso!');
+
     }
+
+
 
 
 
