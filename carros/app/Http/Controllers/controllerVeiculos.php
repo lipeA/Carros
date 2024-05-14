@@ -12,7 +12,7 @@ class controllerVeiculos extends Controller
 
     public function index()
     {
-        $veiculos = modelVeiculos::orderBy('created_at', 'desc')->get();
+        $veiculos = modelVeiculos::orderBy('created_at', 'desc')->paginate(2);
 
         return view('veiculos.index', ['veiculos' => $veiculos]);
     }
@@ -73,9 +73,8 @@ class controllerVeiculos extends Controller
 
     public function atualizar( Request $request ,$id){
 
-
         $carro = modelVeiculos::find($id);
-       
+
        $carro->update([
 
         'veiculo' => $request->modelo,
@@ -85,7 +84,7 @@ class controllerVeiculos extends Controller
 
        ]);
 
-       return redirect()->route('veiculos.index')->with('success', 'Veículo atualizado com sucesso.');
+       return redirect()->route('veiculos.index')->with('sucess', 'Veículo atualizado com sucesso.');
     }
 
 

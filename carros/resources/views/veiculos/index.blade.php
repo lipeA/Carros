@@ -11,10 +11,14 @@
         <div class="w-4/5 bg-white p-8">
 
             @if (session('sucess'))
-                <p class="bg-green-700 text-white text-2xl py-4 pl-4  mt-4 mb-4">
-                    {{ session('sucess') }}
-                </p>
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        Swal.fire('Pronto', " {{ session('sucess') }}", 'sucess');
+                    })
+                </script>
             @endif
+
+
 
             <div class="border">
                 <h2 class="font-semibold text-5xl p-10 mb-10 ">Lista de Veiculos</h2>
@@ -23,7 +27,7 @@
             <a href="{{ route('veiculos.create') }}"> <button class="bg-green-700 text-white p-2 rounded-md mt-10">
                     Cadastrar novo veiculo </button> </a><br>
 
-            @forelse ($veiculos as $veiculo)
+            @foreach ($veiculos as $veiculo)
                 <table class="table-fixed w-full  mt-10 ">
 
                     <thead class="mb-8 ">
@@ -49,7 +53,7 @@
                                     </button>
                                 </a>
 
-                                <a href=" {{route('veiculos.editar', ['id'=> $veiculo->id])}} ">
+                                <a href=" {{ route('veiculos.editar', ['id' => $veiculo->id]) }} ">
                                     <button class="bg-yellow-700 text-white p-2 rounded-md"> Editar </button>
                                 </a>
 
@@ -65,18 +69,18 @@
 
                             </td>
                         </tr>
+            @endforeach
 
-                    </tbody>
-                </table>
-
-
-
+            </tbody>
+            </table>
 
 
 
-            @empty
-                <span class="text-red-700 text-xl mt-5">Nenhum veiculo encontrado!</span>
-            @endforelse
+
+           <div class="mt-14">
+               {{  $veiculos->links() }}
+           </div>
+
         </div>
 
     </div>
