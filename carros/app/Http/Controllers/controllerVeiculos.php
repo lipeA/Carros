@@ -73,10 +73,17 @@ class controllerVeiculos extends Controller
 
     public function atualizar( Request $request ,$id){
 
-        dd($request);
-        $carro = modelVeiculos::find($id);
 
-       $carro->update($request->all());
+        $carro = modelVeiculos::find($id);
+       
+       $carro->update([
+
+        'veiculo' => $request->modelo,
+        'placa' => $request->placa,
+        'cor' => $request->cor,
+        'ano' => $request->ano,
+
+       ]);
 
        return redirect()->route('veiculos.index')->with('success', 'Veículo atualizado com sucesso.');
     }

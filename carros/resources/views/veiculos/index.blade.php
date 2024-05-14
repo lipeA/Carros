@@ -31,6 +31,7 @@
                             <th>Veiculo</th>
                             <th>Placa</th>
                             <th>Ano</th>
+                            <th>Proprietario</th>
                             <th class="">Ações</th>
                         </tr>
                     </thead>
@@ -38,7 +39,9 @@
                         <tr>
                             <td> {{ $veiculo->veiculo }} </td>
                             <td> {{ $veiculo->placa }} </td>
-                            <td>1961</td>
+                            <td> {{ $veiculo->cor }} </td>
+                            <td>felipe</td>
+
                             <td class="flex gap-4">
                                 <a href=" {{ route('veiculos.show', ['id' => $veiculo->id]) }} ">
                                     <button class="bg-green-700 text-white p-2 rounded-md">

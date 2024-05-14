@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    {{-- {{ dd($carro) }} --}}
+
     <header class="bg-white w-full p-11 flex items-center justify-items-start gap-8 border-b-2">
         <a href="{{ route('veiculos.index') }}" class="no-underline bg-blue-900 text-white px-10 py-2  rounded-md ">
             Voltar
@@ -23,7 +23,7 @@
         <div class="">
             <form action=" {{route('veiculo.atualizar', ['id'=> $carro->id])}} " method="POST">
                 @csrf
-                @method('PUT')
+                @method('PUT');
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-base font-semibold leading-7 text-gray-900">Preencha as informações sobre o

@@ -14,7 +14,7 @@ class modelVeiculos extends Model
 
     protected $table = 'veiculos';
 
-    protected $fillable = ['veiculo', 'placa', 'cor', 'ano'];
+    protected $fillable = ['veiculo','marca', 'cor', 'placa', 'ano',];
 
 
 }
