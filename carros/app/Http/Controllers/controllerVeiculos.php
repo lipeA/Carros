@@ -64,7 +64,22 @@ class controllerVeiculos extends Controller
     }
 
 
+    public function edit($id){
 
+        $carro = modelVeiculos::find($id);
+
+        return view('veiculos.editar', ['carro' =>$carro]);
+    }
+
+    public function atualizar( Request $request ,$id){
+
+        dd($request);
+        $carro = modelVeiculos::find($id);
+
+       $carro->update($request->all());
+
+       return redirect()->route('veiculos.index')->with('success', 'Veículo atualizado com sucesso.');
+    }
 
 
 

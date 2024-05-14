@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth'],  function (){
    Route::post('/store-veiculo', [controllerVeiculos::class, 'store'])->name('veiculos.store');
    Route::get('/show-veiculo/{id}', [controllerVeiculos::class, 'show'])->name('veiculos.show');
    Route::delete('/destroy-veiculo/{id}', [controllerVeiculos::class, 'destroy'])->name('veiculos.derstroy');
+   Route::get('/editar-veiculo/{id}', [controllerVeiculos::class, 'edit'])->name('veiculos.editar');
+   Route::put('/atualizar-veiculo/{id}', [controllerVeiculos::class, 'atualizar'])->name('veiculo.atualizar');
 
 
 

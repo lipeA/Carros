@@ -40,10 +40,18 @@
                             <td> {{ $veiculo->placa }} </td>
                             <td>1961</td>
                             <td class="flex gap-4">
-                                <a href=" {{ route('veiculos.show', ['id' => $veiculo->id]) }} "> <button
-                                        class="bg-green-700 text-white p-2 rounded-md"> Visualizar </button> </a>
-                                <button class="bg-yellow-700 text-white p-2 rounded-md"> Editar </button>
-                                <form action=" {{ route('veiculos.derstroy', ['id' => $veiculo->id]) }} " method="POST">
+                                <a href=" {{ route('veiculos.show', ['id' => $veiculo->id]) }} ">
+                                    <button class="bg-green-700 text-white p-2 rounded-md">
+                                        Visualizar
+                                    </button>
+                                </a>
+
+                                <a href=" {{route('veiculos.editar', ['id'=> $veiculo->id])}} ">
+                                    <button class="bg-yellow-700 text-white p-2 rounded-md"> Editar </button>
+                                </a>
+
+                                <form action=" {{ route('veiculos.derstroy', ['id' => $veiculo->id]) }} "
+                                    method="POST">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="bg-red-700 text-white p-2 rounded-md"
