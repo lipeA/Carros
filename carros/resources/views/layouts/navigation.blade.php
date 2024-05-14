@@ -16,6 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('donos.index')" :active="request()->routeIs('Proprietarios')">
+                        {{ __('Proprietarios') }}
+                    </x-nav-link>
+                </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('veiculos.index')" :active="request()->routeIs('veiculos')">
                         {{ __('veiculos') }}
